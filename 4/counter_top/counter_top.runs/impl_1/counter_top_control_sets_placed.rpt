@@ -1,0 +1,80 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Fri Mar  1 01:54:10 2019
+| Host         : Nugget running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file counter_top_control_sets_placed.rpt
+| Design       : counter_top
+| Device       : xc7z010
+----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    13 |
+| Unused register locations in slices containing registers |    62 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            5 |
+|      2 |            1 |
+|      4 |            2 |
+|    16+ |            5 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               2 |            2 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              31 |           11 |
+| Yes          | No                    | No                     |               5 |            3 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              92 |           26 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-------------------+---------------------------+------------------+----------------+
+|  Clock Signal  |   Enable Signal   |      Set/Reset Signal     | Slice Load Count | Bel Load Count |
++----------------+-------------------+---------------------------+------------------+----------------+
+|  clk_IBUF_BUFG |                   | dba/dbnc_i_1_n_0          |                1 |              1 |
+|  clk_IBUF_BUFG |                   | dbb/dbnc_i_1__0_n_0       |                1 |              1 |
+|  clk_IBUF_BUFG |                   | dbc/dbnc_i_1__1_n_0       |                1 |              1 |
+|  clk_IBUF_BUFG |                   | dbd/dbnc_i_1__2_n_0       |                1 |              1 |
+|  clk_IBUF_BUFG | div/direction0    |                           |                1 |              1 |
+|  clk_IBUF_BUFG |                   |                           |                2 |              2 |
+|  clk_IBUF_BUFG | dba/dbnc_reg_0[0] | counter/cnt[3]_i_1_n_0    |                2 |              4 |
+|  clk_IBUF_BUFG | div/E[0]          |                           |                2 |              4 |
+|  clk_IBUF_BUFG | dba/ltOp          | dba/clear                 |                6 |             22 |
+|  clk_IBUF_BUFG | dbb/ltOp          | dbb/count[0]_i_1__0_n_0   |                6 |             22 |
+|  clk_IBUF_BUFG | dbc/ltOp          | dbc/count[0]_i_1__1_n_0   |                6 |             22 |
+|  clk_IBUF_BUFG | dbd/ltOp          | dbd/count[0]_i_1__2_n_0   |                6 |             22 |
+|  clk_IBUF_BUFG |                   | div/div/ltOp_carry__2_n_5 |                7 |             27 |
++----------------+-------------------+---------------------------+------------------+----------------+
+
+
