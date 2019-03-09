@@ -10,9 +10,9 @@ end counter_top;
 
 architecture rtl_ckt of counter_top is
 --components
-component divider_top is
-    port( clk : in STD_LOGIC;
-          result : inout STD_LOGIC);
+component clock_div is
+    port( clk_in : in STD_LOGIC;
+          div : inout STD_LOGIC);
 end component;
 
 component debounce is
@@ -30,7 +30,7 @@ component fancy_counter is
           rst : in STD_LOGIC;
           updn : in STD_LOGIC;
           val : in STD_LOGIC_VECTOR (3 downto 0);
-          cnt : inout STD_LOGIC_VECTOR (3 downto 0));
+          count : inout STD_LOGIC_VECTOR (3 downto 0));
 end component;
 
 --signals
@@ -54,10 +54,10 @@ port map (clk => clk, btn => btn(2), dbnc => dbnc_2);
 dbd: debounce
 port map (clk => clk, btn => btn(3), dbnc => dbnc_3);
 
-div: divider_top
-port map (clk => clk, result => div_clk);
+div: clock_div
+port map (clk_in => clk, div => div_clk);
 
 counter: fancy_counter
-port map (clk => clk, clk_en => div_clk, dir => sw(0), en => dbnc_1, ld => dbnc_3, rst => dbnc_0, updn => dbnc_2, val => sw, cnt => led);
+port map (clk => clk, clk_en => div_clk, dir => sw(0), en => dbnc_1, ld => dbnc_3, rst => dbnc_0, updn => dbnc_2, val => sw, count => led);
 
 end rtl_ckt;

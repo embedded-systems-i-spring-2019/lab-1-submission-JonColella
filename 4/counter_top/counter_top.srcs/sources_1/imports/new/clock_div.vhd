@@ -9,7 +9,7 @@ end clock_div;
 
 --divides a 125MHZ signal down to a 2Hz signal
 architecture Behavioral of clock_div is
-signal count: std_logic_vector (26 downto 0); --26 bits needed to count to 62,499,999
+signal count: std_logic_vector (25 downto 0); --26 bits needed to count to 62,499,999
 begin
 
 process(clk_in) begin
@@ -20,6 +20,7 @@ process(clk_in) begin
         else
         count <= (others => '0');
         div <= '1'; --output is high
+        count <= (others => '0');
         end if;
     end if;
 end process;

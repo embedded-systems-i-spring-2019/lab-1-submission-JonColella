@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param synth.incrementalSynthesisCache C:/Users/jonco/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-2940-JONPC/incrSyn
+set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7z010clg400-2
@@ -24,18 +26,17 @@ create_project -in_memory -part xc7z010clg400-2
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {C:/Users/Jon/Desktop/Lab 1/4/counter_top/counter_top.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/Jon/Desktop/Lab 1/4/counter_top/counter_top.xpr} [current_project]
+set_property webtalk.parent_dir {C:/Users/jonco/Desktop/Spring 2019 Classes/Embedded Systems/Lab/lab1/lab-1-submission-JonColella/4/counter_top/counter_top.cache/wt} [current_project]
+set_property parent.project_path {C:/Users/jonco/Desktop/Spring 2019 Classes/Embedded Systems/Lab/lab1/lab-1-submission-JonColella/4/counter_top/counter_top.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo {c:/Users/Jon/Desktop/Lab 1/4/counter_top/counter_top.cache/ip} [current_project]
+set_property ip_output_repo {c:/Users/jonco/Desktop/Spring 2019 Classes/Embedded Systems/Lab/lab1/lab-1-submission-JonColella/4/counter_top/counter_top.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  {C:/Users/Jon/Desktop/Lab 1/4/counter_top/counter_top.srcs/sources_1/imports/new/clock_div.vhd}
-  {C:/Users/Jon/Desktop/Lab 1/4/counter_top/counter_top.srcs/sources_1/imports/Lab 1/2/2/2.srcs/sources_1/new/debounce.vhd}
-  {C:/Users/Jon/Desktop/Lab 1/4/counter_top/counter_top.srcs/sources_1/imports/Lab 1/1/clock_div/clock_div.srcs/sources_1/new/divider_top.vhd}
-  {C:/Users/Jon/Desktop/Lab 1/4/counter_top/counter_top.srcs/sources_1/imports/Lab 1/3/fancy_counter/fancy_counter.srcs/sources_1/new/fancy_counter.vhd}
-  {C:/Users/Jon/Desktop/Lab 1/4/counter_top/counter_top.srcs/sources_1/new/counter_top.vhd}
+  {C:/Users/jonco/Desktop/Spring 2019 Classes/Embedded Systems/Lab/lab1/lab-1-submission-JonColella/4/counter_top/counter_top.srcs/sources_1/imports/new/clock_div.vhd}
+  {C:/Users/jonco/Desktop/Spring 2019 Classes/Embedded Systems/Lab/lab1/lab-1-submission-JonColella/4/counter_top/counter_top.srcs/sources_1/imports/Lab 1/2/2/2.srcs/sources_1/new/debounce.vhd}
+  {C:/Users/jonco/Desktop/Spring 2019 Classes/Embedded Systems/Lab/lab1/lab-1-submission-JonColella/4/counter_top/counter_top.srcs/sources_1/imports/Lab 1/3/fancy_counter/fancy_counter.srcs/sources_1/new/fancy_counter.vhd}
+  {C:/Users/jonco/Desktop/Spring 2019 Classes/Embedded Systems/Lab/lab1/lab-1-submission-JonColella/4/counter_top/counter_top.srcs/sources_1/new/counter_top.vhd}
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -45,8 +46,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/Jon/Desktop/Lab 1/4/counter_top/counter_top.srcs/constrs_1/imports/4/ZYBO_Master.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/Jon/Desktop/Lab 1/4/counter_top/counter_top.srcs/constrs_1/imports/4/ZYBO_Master.xdc}}]
+read_xdc {{C:/Users/jonco/Desktop/Spring 2019 Classes/Embedded Systems/Lab/lab1/lab-1-submission-JonColella/4/counter_top/counter_top.srcs/constrs_1/imports/4/ZYBO_Master.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/jonco/Desktop/Spring 2019 Classes/Embedded Systems/Lab/lab1/lab-1-submission-JonColella/4/counter_top/counter_top.srcs/constrs_1/imports/4/ZYBO_Master.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

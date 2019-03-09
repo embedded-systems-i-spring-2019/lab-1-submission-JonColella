@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Fri Mar  1 01:54:23 2019
-| Host             : Nugget running 64-bit major release  (build 9200)
+| Date             : Thu Mar  7 23:18:17 2019
+| Host             : JONPC running 64-bit major release  (build 9200)
 | Command          : report_power -file counter_top_power_routed.rpt -pb counter_top_power_summary_routed.pb -rpx counter_top_power_routed.rpx
 | Design           : counter_top
 | Device           : xc7z010clg400-2
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      343 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       91 |     17600 |            0.52 |
+| Slice Logic    |    <0.001 |      327 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       84 |     17600 |            0.48 |
 |   CARRY4       |    <0.001 |       47 |      4400 |            1.07 |
-|   Register     |    <0.001 |      130 |     35200 |            0.37 |
-|   Others       |     0.000 |       13 |       --- |             --- |
-| Signals        |    <0.001 |      213 |       --- |             --- |
+|   Register     |    <0.001 |      128 |     35200 |            0.36 |
+|   Others       |     0.000 |       11 |       --- |             --- |
+| Signals        |    <0.001 |      202 |       --- |             --- |
 | I/O            |     0.014 |       13 |       100 |           13.00 |
 | Static Power   |     0.093 |          |           |                 |
 | Total          |     0.109 |          |           |                 |
@@ -72,7 +72,7 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.006 |       0.002 |      0.004 |
-| Vccaux    |       1.800 |     0.006 |       0.001 |      0.005 |
+| Vccaux    |       1.800 |     0.006 |       0.000 |      0.005 |
 | Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |

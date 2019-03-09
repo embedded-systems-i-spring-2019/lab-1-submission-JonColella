@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../clock_div.srcs/sources_1/new/clock_div.vhd" \
+"../../../../clock_div.srcs/sources_1/new/clock_div_tb.vhd" \
+
+# Do not sort compile order
+nosort
